@@ -4,7 +4,13 @@ function comprar() {
 let tipoIngresso = document.getElementById('tipo-ingresso');
 let quantidade = parseInt(document.getElementById('qtd').value);
 
-if (tipoIngresso.value == 'pista') {
+if (quantidade <= 0) { 
+    alert ('Digite um número maior do que 0');
+    document.getElementById('qtd').value = '';
+    return; 
+}
+
+    if (tipoIngresso.value == 'pista') {
     
     comprarPista(quantidade);
 
@@ -17,9 +23,8 @@ if (tipoIngresso.value == 'pista') {
         comprarInferior(quantidade);
 
     }   document.getElementById('qtd').value = '';
+
 }
-
-
 
 //declarar qtd de ingressos nos setores
 
